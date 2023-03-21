@@ -2,8 +2,12 @@ import openai
 import urllib.request
 from PIL import Image
 import streamlit as st
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-openai.api_key = "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"
+
+openai.api_key = os.getenv("API_KEY")
 
 #Function to generate image
 def generate_img(img_description):
