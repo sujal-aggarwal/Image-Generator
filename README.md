@@ -20,3 +20,4 @@ This then runs the web app on your localhost.
 
 https://user-images.githubusercontent.com/114332825/226665669-f53798e7-ee23-459a-ad2d-c27d52c068aa.mp4
 
+The file named "requirements.txt" helps to deploy the project online. It contains all the libraries used in this project.
