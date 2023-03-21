@@ -7,7 +7,7 @@ import os
 load_dotenv()
 
 
-openai.api_key = os.getenv("API_KEY")
+openai.api_key=os.getenv("API_KEY")
 
 #Function to generate image
 def generate_img(img_description):
