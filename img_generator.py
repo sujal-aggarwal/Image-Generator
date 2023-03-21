@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 APIKEY=os.getenv("APIKEY")
-openai.api_key =f"sk-{APIKEY}"
+openai.api_key =f"{APIKEY}"
 
 def generate_image(image_description):
 
