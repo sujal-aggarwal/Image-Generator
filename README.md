@@ -1,6 +1,6 @@
 # Image-Generator
-Deplyoing machine learning Web App which utilises OpenAI API to generate image based on text description of the image.
-To Deploy the web app in your local system first dotenv library by 
+Deplyoing machine learning Web App which utilises OpenAI API to generate image based on text description of the image.<br>
+To Deploy the web app in your local system first install dotenv library by 
 ```ruby
 pip install python-dotenv
 ```
