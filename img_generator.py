@@ -2,32 +2,39 @@ import openai
 import urllib.request
 from PIL import Image
 import streamlit as st
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
+
 load_dotenv()
 
+APIKEY=os.getenv("APIKEY")
+openai.api_key =f"sk-{APIKEY}"
 
-openai.api_key=os.getenv("API_KEY")
+def generate_image(image_description):
 
-#Function to generate image
-def generate_img(img_description):
-    img_response=openai.Image.create(
-        prompt=img_description,
-        n=1,
-        size="512x512"
-    )
-    img_url=img_response['data'][0]['url']
-    urllib.request.urlretrieve(img_url,'img.png')
-    img=Image.open("img.png")
-    return img
+  img_response = openai.Image.create(
+    prompt = image_description,
+    n=1,
+    size="512x512")
+  
 
-# Page Title
+  img_url = img_response['data'][0]['url']
+
+  urllib.request.urlretrieve(img_url, 'img.png')
+
+  img = Image.open("img.png")
+  
+  return img
+
+
+
+# page title
 st.title(' Image Generation ')
 
-#Text box
-img_description=st.text_input('Image Description')
+# text input box for image recognition
+img_description = st.text_input('Image Desription')
 
-#Text button
 if st.button('Generate Image'):
-    generated_image=generate_img(img_description)
-    st.image(generated_image)
+    
+    generated_img = generate_image(img_description)
+    st.image(generated_img)
